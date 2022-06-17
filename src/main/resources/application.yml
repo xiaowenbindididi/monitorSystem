@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    //改网址和表名
+    url: jdbc:mysql://192.168.56.10:3306/gulimall_pms
+    driver-class-name: com.mysql.jdbc.Driver

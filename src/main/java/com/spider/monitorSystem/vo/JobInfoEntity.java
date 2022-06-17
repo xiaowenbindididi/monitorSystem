@@ -7,11 +7,13 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class JobInfoVo {
+public class JobInfoEntity {
+    @ApiModelProperty(name = "任务的id")
+    String jobId;
     @ApiModelProperty(name = "任务名称")
     String jobName;
     @ApiModelProperty(name = "任务状态",value = "0正常,1不正常")
-    int state;
+    int status;
     @ApiModelProperty(name = "创建时间",value = "unix时间戳格式")
     long createTime;
     @ApiModelProperty(name = "关联项目",value = "一个或多个")
@@ -21,7 +23,7 @@ public class JobInfoVo {
     @ApiModelProperty(name = "开发负责人",value = "一个或多个")
     List<String> developer;
     @ApiModelProperty(name = "运维负责人",value = "一个或多个")
-    List<String> operationer;
+    List<String> maintainer;
     @ApiModelProperty(name = "任务类型",value = "0:代表一次性，1代表周期性")
     int taskType;
     @ApiModelProperty(name = "cron配置信息")
@@ -30,5 +32,4 @@ public class JobInfoVo {
     long nextStartTime;
     @ApiModelProperty(name = "描述信息")
     String desc;
-
 }
