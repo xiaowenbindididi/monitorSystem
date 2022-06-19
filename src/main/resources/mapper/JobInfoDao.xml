@@ -10,15 +10,24 @@
         <result property="status" column="status"/>
         <result property="createTime" column="job_create_time"/>
         <result property="relatedProject" column="Associated_project"/>
-<!--        <result property="productOwner" column="product_owner"/>-->
-<!--        <result property="developer" column="developer"/>-->
-<!--        <result property="maintainer" column="maintenance"/>-->
-<!--        <result property="jobType" column="job_type"/>-->
-<!--        <result property="config" column="cron_config"/>-->
-<!--        <result property="nextStartTime" column="next_start_time"/>-->
-<!--        <result property="desc" column="desc"/>-->
+        <result property="productOwner" column="product_owner"/>
+        <result property="developer" column="developer"/>
+        <result property="maintainer" column="maintenance"/>
+        <result property="jobType" column="job_type"/>
+        <result property="config" column="cron_config"/>
+        <result property="nextStartTime" column="next_start_time"/>
+        <result property="desc" column="desc"/>
     </resultMap>
     <select id="selectAllJobs" resultMap="jobInfoMap">
         select * from job
+        <foreach item="productOwner" index="index" collection="str.split(',')" open="(" separator="," close=")">#{item}</foreach>
     </select>
+    <sql id="selectAllJobs">
+        <if test=" paymentTypes != null and paymentTypes.size() > 0">
+            AND payment_type in
+            <foreach collection="paymentTypes" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </sql>
 </mapper>
