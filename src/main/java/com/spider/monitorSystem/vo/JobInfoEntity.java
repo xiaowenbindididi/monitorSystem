@@ -4,6 +4,7 @@ package com.spider.monitorSystem.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.sql.Date;
 import java.util.List;
 
 @Data
@@ -15,21 +16,21 @@ public class JobInfoEntity {
     @ApiModelProperty(name = "任务状态",value = "0正常,1不正常")
     int status;
     @ApiModelProperty(name = "创建时间",value = "unix时间戳格式")
-    long createTime;
+    Date createTime;
     @ApiModelProperty(name = "关联项目",value = "一个或多个")
-    List<String> relatedProject;
+    String relatedProject;
     @ApiModelProperty(name = "产品负责人",value = "一个或多个")
-    List<String> productOwner;
+    String productOwner;
     @ApiModelProperty(name = "开发负责人",value = "一个或多个")
-    List<String> developer;
+    String developer;
     @ApiModelProperty(name = "运维负责人",value = "一个或多个")
-    List<String> maintainer;
+    String maintainer;
     @ApiModelProperty(name = "任务类型",value = "0:代表一次性，1代表周期性")
-    int taskType;
+    int jobType;
     @ApiModelProperty(name = "cron配置信息")
     String config;
     @ApiModelProperty(name = "下次运行时间")
-    long nextStartTime;
+    Date nextStartTime;
     @ApiModelProperty(name = "描述信息")
     String desc;
 }
