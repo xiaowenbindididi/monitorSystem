@@ -11,7 +11,7 @@ import java.util.List;
 public class SortUtils {
     public List<JobInfoEntity> sortJobInfoList(List<JobInfoEntity> jobInfoEntityList) {
         JobInfoEntity[] jobInfoEntities = jobInfoEntityList.toArray(new JobInfoEntity[0]);
-        Arrays.sort(jobInfoEntities,new JobInfoComparator());
+        Arrays.sort(jobInfoEntities, new JobInfoComparator());
         return Arrays.asList(jobInfoEntities);
     }
 }

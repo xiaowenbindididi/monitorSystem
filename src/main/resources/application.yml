@@ -1,8 +1,9 @@
 spring:
   datasource:
-    username: root
-    password: 333
-    url: jdbc:mysql://127.0.0.1:3306/spider?serverTimezone=UTC
+    username: admin
+    password: PharmCube_2012
+#    url: jdbc:mysql://47.95.220.207:3306/spider_monitor?serverTimezone=UTC
+    url: jdbc:mysql://172.17.108.107:3306/spider_monitor?serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml

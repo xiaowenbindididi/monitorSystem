@@ -17,7 +17,7 @@ public class JobInfoEntity {
     String jobName;
     @ApiModelProperty(name = "任务状态",value = "0正常,1不正常")
     int status;
-    @ApiModelProperty(name = "创建时间",value = "unix时间戳格式")
+    @ApiModelProperty(name = "创建时间",value = "Date时间格式")
     Date createTime;
     @ApiModelProperty(name = "关联项目",value = "一个或多个")
     String relatedProject;
@@ -31,7 +31,7 @@ public class JobInfoEntity {
     int jobType;
     @ApiModelProperty(name = "cron配置信息")
     String config;
-    @ApiModelProperty(name = "下次运行时间",value = "unix时间戳格式")
+    @ApiModelProperty(name = "下次运行时间",value = "Date时间格式")
     Date nextStartTime;
     @ApiModelProperty(name = "描述信息")
     String desc;
